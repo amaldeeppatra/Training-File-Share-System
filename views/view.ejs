@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head") %>
+    <title>View</title>
+</head>
+<body class="bg-gradient-to-b from-sky-300 to-sky-800">
+    <header class="absolute top-0 right-0 p-4 font-mono">
+        <a href="/user/logout" class="text-white bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg border-[3px] border-red-700">Sign Out</a>
+    </header>
+    <main class="flex items-center justify-center h-screen ">
+        <div class="p-16 card rounded-lg font-mono shadow-md text-center bg-[#ffffff25] border-[1px] border-[#a5a5a5]">
+            <p class="-mt-10 mb-14 text-3xl font-bold">Select the Sheet to View</p>
+            <h2 class="mb-[50px] text-4xl hover:scale-105"><a class="border-4 rounded-xl border-cyan-900 bg-cyan-600 p-2" href="/view/employee">Employee</a></h2>
+            <h2 class="mt-[50px] text-4xl hover:scale-105 transition-transform duration-[180ms]"><a class="border-4 rounded-xl border-emerald-800 bg-emerald-500 p-2" href="/view/contract-worker">Contract Worker</a></h2>
+        </div>
+    </main>
+</body>
+</html>

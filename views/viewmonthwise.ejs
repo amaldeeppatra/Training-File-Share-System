@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head") %>
+    <title>Month-wise View</title>
+</head>
+<body class="bg-gradient-to-b from-blue-300 to-blue-800 min-h-screen flex flex-col items-center p-10 font-mono">
+    <header class="w-full flex justify-between items-center p-4">
+        <h1 class="text-4xl font-bold text-slate-800">Month-wise View</h1>
+        <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition">
+            <a href="/user/logout">Sign Out</a>
+        </button>
+    </header>
+    
+    <div class="w-full max-w-7xl bg-white bg-opacity-75 backdrop-filter backdrop-blur-lg p-8 rounded-xl shadow-lg text-center text-lg">
+        <% if (locals.data){ %>
+            <table class="min-w-full bg-white rounded-lg shadow-lg">
+                <thead class="bg-gray-800 text-white">
+                    <tr>
+                        <th class="p-4 border-gray-200">Month</th>
+                        <th class="p-4 border-gray-200">Employee</th>
+                        <th class="p-4 border-gray-200">Contract Worker</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-700">
+                    <% data.forEach(item => { %>
+                        <tr class="<%= item % 2 === 0 ? 'bg-gray-100' : 'bg-white' %>">
+                            <td class="p-4 border-gray-200"><%= item.month %></td>
+                            <td class="p-4 border-gray-200"><%= item.employeeCount %></td>
+                            <td class="p-4 border-gray-200"><%= item.contractorCount %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } %>
+    </div>
+</body>
+</html>

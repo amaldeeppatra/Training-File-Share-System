@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head") %>
+    <title>Contract Worker View</title>
+</head>
+<body class="bg-gradient-to-b from-green-300 to-green-800 min-h-screen flex flex-col items-center p-7 font-mono">
+<!-- <body class="bg-gradient-to-b from-blue-300 to-blue-800 min-h-screen flex flex-col items-center p-7 font-mono"> -->
+    <header class="w-full flex justify-between items-center p-4">
+        <h1 class="text-4xl font-bold text-slate-800">Contract Worker</h1>
+        <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition">
+            <a href="/user/logout">Sign Out</a>
+        </button>
+    </header>
+
+    <div class="flex justify-center space-x-4 mb-8">
+        <button class="bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition">
+            <a href="/view/contract-worker/download">Download</a>
+        </button>
+        <button class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition">
+            <a href="/view/contract-worker">Clear Filter</a>
+        </button>
+        <button class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition">
+            <a href="/view">Go Back to View</a>
+        </button>
+        <button class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition">
+            <a href="/dashboard">Go Back to Dashboard</a>
+        </button>
+    </div>
+
+    <div class="w-full max-w-7xl bg-white bg-opacity-75 backdrop-filter backdrop-blur-lg p-8 rounded-xl shadow-lg">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <form action="/view/contract-worker/filter-empid" method="post" class="flex flex-col items-start space-y-4">
+                <label class="text-lg font-semibold text-gray-700" for="empID">Emp. ID</label>
+                <input class="w-full border-2 border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" type="text" name="empID" id="empID">
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Go</button>
+            </form>
+
+            <form action="/view/contract-worker/filter-dept" method="post" class="flex flex-col items-start space-y-4">
+                <label class="text-lg font-semibold text-gray-700" for="dropdown1">Department</label>
+                <select id="dropdown1" class="w-full border-2 border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" name="dropdown1">
+                    <option value="" selected>Select your option</option>
+                    <option value="SMS-1">SMS-1</option>
+                    <option value="SMS-2">SMS-2</option>
+                    <option value="LBM">LBM</option>
+                    <option value="WRM">WRM</option>
+                    <option value="HBM">HBM</option>
+                    <option value="Bright Bar">Bright Bar</option>
+                    <option value="Oxygen Plant">Oxygen Plant</option>
+                    <option value="Blast Furnace">Blast Furnace</option>
+                    <option value="RMHS">RMHS</option>
+                    <option value="Pellet Plant">Pellet Plant</option>
+                    <option value="PP-1">PP-1</option>
+                    <option value="PP-2">PP-2</option>
+                    <option value="PP-3">PP-3</option>
+                    <option value="PP-4">PP-4</option>
+                    <option value="PP-5">PP-5</option>
+                    <option value="Sinter Plant">Sinter Plant</option>
+                    <option value="Coke Oven">Coke Oven</option>
+                    <option value="350 TPD DRI">350 TPD DRI</option>
+                    <option value="500 TPD DRI">500 TPD DRI</option>
+                    <option value="QA">QA</option>
+                    <option value="PPC">PPC</option>
+                    <option value="Utility">Utility</option>
+                    <option value="Crane & Auto">Crane & Auto</option>
+                    <option value="Civil">Civil</option>
+                    <option value="ERS & Central Electrical">ERS & Central Electrical</option>
+                    <option value="Central Mechanical">Central Mechanical</option>
+                    <option value="Security & Fire">Security & Fire</option>
+                    <option value="Environment">Environment</option>
+                    <option value="Safety">Safety</option>
+                    <option value="Canteen">Canteen</option>
+                    <option value="Stores">Stores</option>
+                    <option value="Project">Project</option>
+                    <option value="Other Common/Service">Other Common/Service</option>
+                </select>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Go</button>
+            </form>
+
+            <form action="/view/contract-worker/filter-topic" method="post" class="flex flex-col items-start space-y-4">
+                <label class="text-lg font-semibold text-gray-700" for="dropdown2">Topic of Training Programme</label>
+                <select id="dropdown2" class="w-full border-2 border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" name="dropdown2">
+                    <option value="" selected>Select your option</option>
+                    <option value="KYT">KYT</option>
+                    <option value="HIRA">HIRA</option>
+                    <option value="Machine Guarding">Machine Guarding</option>
+                    <option value="Sensitisation to Emergency Preparedness & Mock Drill">Sensitisation to Emergency Preparedness & Mock Drill</option>
+                    <option value="Gas Safety">Gas Safety</option>
+                    <option value="Road Safety / Defensive Driving Training">Road Safety / Defensive Driving Training</option>
+                    <option value="Confined Space Entry">Confined Space Entry</option>
+                    <option value="Incident Investigation & Reporting Procedure">Incident Investigation & Reporting Procedure</option>
+                    <option value="Molten Metal Handling">Molten Metal Handling</option>
+                    <option value="Work at Height">Work at Height</option>
+                    <option value="Isolation & LOTOV">Isolation & LOTOV</option>
+                    <option value="Electrical Safety">Electrical Safety</option>
+                    <option value="Hot Works & Storage, Handling of Gas Cylinders">Hot Works & Storage, Handling of Gas Cylinders</option>
+                    <option value="Excavation Safety">Excavation Safety</option>
+                    <option value="Cranes & Lifting">Cranes & Lifting</option>
+                    <option value="Industrial Hygiene, Health Hazards & Prevention">Industrial Hygiene, Health Hazards & Prevention</option>
+                    <option value="Material Handling">Material Handling</option>
+                    <option value="Chemical Safety">Chemical Safety</option>
+                    <option value="Rail/Loco Safety">Rail/Loco Safety</option>
+                    <option value="First-aid & CPR">First-aid & CPR</option>
+                </select>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Go</button>
+            </form>
+
+            <form action="/view/contract-worker/filter-month" method="post" class="flex flex-col items-start space-y-4 w-48">
+                <label class="text-lg font-semibold text-gray-700" for="month">Month</label>
+                <input class="w-full border-2 border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" type="month" name="month" id="month">
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Go</button>
+            </form>
+
+            <form action="/view/employee/monthwise" method="post" class="flex flex-col items-start space-y-4">
+                <label class="text-lg font-semibold text-gray-700" for="monthwise">Month-wise Training</label>
+                <button type="submit" class="border-2 border-gray-300 bg-white rounded-lg px-4 py-2 hover:bg-gray-200 transition">View</button>
+            </form>
+        </div>
+
+        <div class="overflow-x-auto text-center">
+            <% if (locals.data){ %>
+                <table class="min-w-full bg-white">
+                    <thead class="bg-gray-800 text-white">
+                        <tr>
+                            <th class="py-2 px-4 border-b-2 border-gray-300">Emp. ID</th>
+                            <th class="py-2 px-4 border-b-2 border-gray-300">Name</th>
+                            <th class="py-2 px-4 border-b-2 border-gray-300">Department</th>
+                            <th class="py-2 px-4 border-b-2 border-gray-300">Topic of Training Programme</th>
+                            <th class="py-2 px-4 border-b-2 border-gray-300">Date</th>
+                            <th class="py-2 px-4 border-b-2 border-gray-300">Duration (in hrs)</th>
+                            <th class="py-2 px-4 border-b-2 border-gray-300">Name of Contractor</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700">
+                        <% data.forEach((data, index) => { %>
+                            <tr class="<%= index % 2 === 0 ? 'bg-gray-100' : 'bg-white' %>">
+                                <td class="py-2 px-4 border-b border-gray-300"> <%= data.empID %> </td>
+                                <td class="py-2 px-4 border-b border-gray-300"> <%= data.name %> </td>
+                                <td class="py-2 px-4 border-b border-gray-300"> <%= data.dept %> </td>
+                                <td class="py-2 px-4 border-b border-gray-300"> <%= data.topic %> </td>
+                                <td class="py-2 px-4 border-b border-gray-300"> <%= data.date %> </td>
+                                <td class="py-2 px-4 border-b border-gray-300"> <%= data.duration %> </td>
+                                <td class="py-2 px-4 border-b border-gray-300"> <%= data.nameOfContractor %> </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

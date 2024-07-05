@@ -1,0 +1,47 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SignUp</title>
+</head>
+<body>
+    <div class="p-36">
+        <h2 class="font-mono font-bold text-4xl text-center">Create Account</h2>
+        <form action="/user/signup" class="text-center my-6" method="post">
+            <label for="fullName" class="font-mono font-semibold text-xl mx-5">Full Name</label>
+            <input type="text" id="fullName" name="fullName" class="border-2 border-black rounded-md mb-3">
+            <br>
+            <label for="email" class="font-mono font-semibold text-xl mx-10">Email</label>
+            <input type="email" id="email" name="email" class="border-2 border-black rounded-md mx-6 mb-3">
+            <br>
+            <label for="password" class="font-mono font-semibold text-xl mx-6">Password</label>
+            <input type="password" name="password" class="border-2 border-black rounded-md mx-2 mb-2" id="password">
+            <br>
+            <button type="submit" class="border-2 h-9 w-20 text-lg font-medium border-black rounded-md mt-3 bg-emerald-400"> SignUp </button>
+        </form>
+    </div>
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head") %>
+    <title>Sign In</title>
+</head>
+<body class="flex items-center justify-center h-screen bg-gradient-to-b from-sky-300 to-sky-800 font-mono">
+    <main class="p-5 card rounded-lg shadow-md text-center max-w-md bg-[#ffffff25]">
+        <h2 class="text-4xl font-semibold mb-5">Create Account</h2>
+        <div class="flex justify-center p-8">
+            <form action="/user/signup" class="text-center" method="post">
+                <label for="fullName" class="font-mono font-semibold text-2xl mx-4 align-middle">Full Name</label><input type="text" id="fullName" name="fullName" class="border-2 border-black rounded-md mb-3">
+                <label for="forEmailLabel" class="font-mono font-semibold text-2xl ml-4 align-middle">Email</label><input type="email" id="forEmailLabel" name="email" class="border-2 border-black rounded-md mb-3 ml-[69px]">
+                <label for="forPasswordLabel" class="font-mono font-semibold text-2xl ml-[15px] align-middle">Password</label><input type="password" name="password" class="border-2 border-black rounded-md mb-2 ml-[30px]" id="forPasswordLabel">
+                <button type="submit" class="border-2 h-9 w-20 text-lg font-semibold border-black rounded-md mt-3 bg-emerald-500 hover:scale-105 hover:bg-[#5bc9a8]"> SignUp </button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

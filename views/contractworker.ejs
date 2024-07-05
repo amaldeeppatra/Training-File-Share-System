@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head") %>
+    <title>Contract Worker</title>
+</head>
+<body class="bg-gradient-to-b from-green-300 to-green-800 min-h-screen flex items-center justify-center">
+<!-- <body class="bg-gradient-to-b from-blue-300 to-blue-800 min-h-screen flex items-center justify-center"> -->
+
+    <div class="bg-white bg-opacity-75 backdrop-filter backdrop-blur-lg p-10 rounded-xl shadow-lg max-w-lg w-full">
+        <h2 class="text-3xl font-mono font-bold mb-8 text-center text-gray-700">Fill your data</h2>
+        <form class="space-y-6" id="" action="/edit/contract-worker" method="post">
+            <div>
+                <label class="block text-xl font-mono font-semibold mb-1" for="empID">Emp. ID</label>
+                <input class="w-full border-2 border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" type="text" name="empID" id="empID" required>
+            </div>
+            <div>
+                <label class="block text-xl font-mono font-semibold mb-1" for="name">Name</label>
+                <input class="w-full border-2 border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" type="text" name="name" id="name" required>
+            </div>
+            <div>
+                <label class="block text-xl font-mono font-semibold mb-1" for="dept">Department</label>
+                <select name="dept" class="w-full border-2 border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" id="dept" required>
+                    <option value="" selected>Select your option</option>
+                    <option value="SMS-1">SMS-1</option>
+                    <option value="SMS-2">SMS-2</option>
+                    <option value="LBM">LBM</option>
+                    <option value="WRM">WRM</option>
+                    <option value="HBM">HBM</option>
+                    <option value="Bright Bar">Bright Bar</option>
+                    <option value="Oxygen Plant">Oxygen Plant</option>
+                    <option value="Blast Furnace">Blast Furnace</option>
+                    <option value="RMHS">RMHS</option>
+                    <option value="Pellet Plant">Pellet Plant</option>
+                    <option value="PP-1">PP-1</option>
+                    <option value="PP-2">PP-2</option>
+                    <option value="PP-3">PP-3</option>
+                    <option value="PP-4">PP-4</option>
+                    <option value="PP-5">PP-5</option>
+                    <option value="Sinter Plant">Sinter Plant</option>
+                    <option value="Coke Oven">Coke Oven</option>
+                    <option value="350 TPD DRI">350 TPD DRI</option>
+                    <option value="500 TPD DRI">500 TPD DRI</option>
+                    <option value="QA">QA</option>
+                    <option value="PPC">PPC</option>
+                    <option value="Utility">Utility</option>
+                    <option value="Crane & Auto">Crane & Auto</option>
+                    <option value="Civil">Civil</option>
+                    <option value="ERS & Central Electrical">ERS & Central Electrical</option>
+                    <option value="Central Mechanical">Central Mechanical</option>
+                    <option value="Security & Fire">Security & Fire</option>
+                    <option value="Environment">Environment</option>
+                    <option value="Safety">Safety</option>
+                    <option value="Canteen">Canteen</option>
+                    <option value="Stores">Stores</option>
+                    <option value="Project">Project</option>
+                    <option value="Other Common/Service">Other Common/Service</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-xl font-mono font-semibold mb-1" for="topic">Topic of Training Programme</label>
+                <select name="topic" class="w-full border-2 border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" id="topic" required>
+                    <option value="" selected>Select your option</option>
+                    <option value="KYT">KYT</option>
+                    <option value="HIRA">HIRA</option>
+                    <option value="Machine Guarding">Machine Guarding</option>
+                    <option value="Sensitisation to Emergency Preparedness & Mock Drill">Sensitisation to Emergency Preparedness & Mock Drill</option>
+                    <option value="Gas Safety">Gas Safety</option>
+                    <option value="Road Safety / Defensive Driving Training">Road Safety / Defensive Driving Training</option>
+                    <option value="Confined Space Entry">Confined Space Entry</option>
+                    <option value="Incident Investigation & Reporting Procedure">Incident Investigation & Reporting Procedure</option>
+                    <option value="Molten Metal Handling">Molten Metal Handling</option>
+                    <option value="Work at Height">Work at Height</option>
+                    <option value="Isolation & LOTOV">Isolation & LOTOV</option>
+                    <option value="Electrical Safety">Electrical Safety</option>
+                    <option value="Hot Works & Storage, Handling of Gas Cylinders">Hot Works & Storage, Handling of Gas Cylinders</option>
+                    <option value="Excavation Safety">Excavation Safety</option>
+                    <option value="Cranes & Lifting">Cranes & Lifting</option>
+                    <option value="Industrial Hygiene, Health Hazards & Prevention">Industrial Hygiene, Health Hazards & Prevention</option>
+                    <option value="Material Handling">Material Handling</option>
+                    <option value="Chemical Safety">Chemical Safety</option>
+                    <option value="Rail/Loco Safety">Rail/Loco Safety</option>
+                    <option value="First-aid & CPR">First-aid & CPR</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-xl font-mono font-semibold mb-1" for="date">Date</label>
+                <input class="w-full border-2 border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" type="date" name="date" id="date" required>
+            </div>
+            <div>
+                <label class="block text-xl font-mono font-semibold mb-1" for="month">Month</label>
+                <input class="w-full border-2 border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" type="month" name="month" id="month" required>
+            </div>
+            <div>
+                <label class="block text-xl font-mono font-semibold mb-1" for="duration">Duration of Hrs</label>
+                <input class="w-full border-2 border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" type="text" name="duration" id="duration" required>
+            </div>
+            <div>
+                <label class="block text-xl font-mono font-semibold mb-1" for="name">Name of Contractor</label>
+                <input class="w-full border-2 border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" type="text" name="nameOfContractor" id="" required>
+            </div>
+            <button type="submit" id="submitButton" class="w-full bg-blue-500 text-white rounded-lg p-3 font-semibold hover:bg-blue-600 transition duration-200">Submit</button>
+        </form>
+
+        <!-- <strong id="msg" class="block mt-6 text-center text-green-500 font-semibold"></strong> -->
+
+        <div class="flex justify-between mt-8">
+            <button onclick="window.location.href='/edit'" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition">Go Back to Edit</button>
+            <button onclick="window.location.href='/dashboard'" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition">Go Back to Dashboard</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("submitButton").addEventListener('click', function(event) {
+            alert('Data filled successfully');
+        });
+    </script>
+
+</body>
+</html>
